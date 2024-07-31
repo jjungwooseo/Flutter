@@ -1,52 +1,43 @@
 import 'package:flutter/material.dart';
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
+
+class Button extends StatefulWidget {
+  const Button({super.key});
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<Button> createState() => _ButtonState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _ButtonState extends State<Button> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:Text("버튼페이지"),
+        title: Text("버튼페이지"),
       ),
-      body:Container(
-        child:Column(
+      body: Container(
+        child: Column(
           children: [
             Center(
-              child:ElevatedButton(
-                style:ElevatedButton.styleFrom(
-                  backgroundColor: Colors.yellow
+              child: ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.yellow
                 ),
-                onPressed:(){print("ElevatedButton click");},
+                onPressed: () { print("ElevatedButton click"); },
                 child: Text("ElevatedButton 버튼"),
-
               ),
             ),
             Center(
-              child:ElevatedButton(
-                style:ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red
-                ),
-                onPressed:(){print("redButton click");},
-                child: Text("redButton 버튼"),
-
+              child: TextButton(
+                onPressed: () { print("TextButton click"); },
+                child: Text("TextButton 버튼"),
               ),
             ),
             Center(
-              child:ElevatedButton(
-                style:ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blue
-                ),
-                onPressed:(){print("BlueButton click");},
-                child: Text("BlueButton 버튼"),
-
+              child: OutlinedButton(
+                onPressed: () { print("OutlinedButton click"); },
+                child: Text("OutlinedButton 버튼"),
               ),
-            ),
-
+            )
           ],
         ),
       ),
